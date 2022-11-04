@@ -3,7 +3,7 @@ from sqlalchemy import Column, ForeignKey, String
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils import UUIDType
 from uuid import uuid4
-from .mixins import TimestampMixin  # 後述
+from .mixins import TimestampMixin
 
 
 class Book(Base, TimestampMixin):
@@ -16,7 +16,6 @@ class Book(Base, TimestampMixin):
     )
     title = Column(String(256), nullable=False)
 
-    # リレーション設定
     user_id = Column(
         UUIDType(binary=False),
         ForeignKey('users.uuid'),

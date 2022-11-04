@@ -29,7 +29,6 @@ Base = declarative_base()
 Base.query = SessionLocal.query_property()
 
 
-# DI用
 def get_db():
     try:
         db = SessionLocal()

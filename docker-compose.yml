@@ -17,7 +17,7 @@ services:
     working_dir: /usr/src/app/scripts
     command: bash -c "./run.sh"
     networks:
-      - fastapi_network
+      - rhyme_quiz
     environment:
       APP_ENV: "development"
       TZ: "Asia/Tokyo"
@@ -25,14 +25,16 @@ services:
       - .env
 
   front:
-    build: ./frontend
+    build:
+      context: .
+      dockerfile: ./docker/frontend/Dockerfile
     volumes:
       - './frontend:/app'
       - '/app/node_modules'
     ports:
       - 8080:8080
     networks:
-      - fastapi_network
+      - rhyme_quiz
 
   db:
     image: "fastapi_starter_db:0.1.0"
@@ -47,7 +49,7 @@ services:
       - ./docker/db/conf.d:/etc/mysql/conf.d:cached
       - ./log/db:/var/log/mysql:cached
     networks:
-      - fastapi_network
+      - rhyme_quiz
     environment:
       APP_ENV: "development"
       TZ: "Asia/Tokyo"
@@ -58,7 +60,7 @@ networks:
   default:
     external:
       name: bridge
-  fastapi_network:
-    name: fastapi_network
+  rhyme_quiz:
+    name: rhyme_quiz
     driver: bridge
     external: true

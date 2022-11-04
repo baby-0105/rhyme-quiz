@@ -3,7 +3,7 @@ from sqlalchemy import Column, String
 from sqlalchemy.orm import relationship
 from sqlalchemy_utils import UUIDType
 from uuid import uuid4
-from .mixins import TimestampMixin  # 後述
+from .mixins import TimestampMixin
 
 
 class User(Base, TimestampMixin):
@@ -16,7 +16,6 @@ class User(Base, TimestampMixin):
     )
     username = Column(String(128), nullable=False)
 
-    # リレーション設定
     books = relationship(
         'Book',
         back_populates='user'

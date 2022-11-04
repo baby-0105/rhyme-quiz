@@ -2,8 +2,10 @@ import cruds.user as crud
 from database import get_db
 from fastapi import APIRouter, Depends
 # schemas の中身は後述
-from schemas.user import \
-    User as UserSchema, UserDetail as UserDetailSchema
+from schemas.user import (
+    User as UserSchema,
+    UserDetail as UserDetailSchema
+)
 from sqlalchemy.orm import Session
 from typing import List
 from uuid import UUID
@@ -11,7 +13,6 @@ from uuid import UUID
 router = APIRouter()
 
 
-# URL は /users 以降のみを書けばOK
 @router.get('/', response_model=List[UserSchema])
 async def read_users(db: Session = Depends(get_db)):
     return crud.read_users(db=db)
