@@ -1,8 +1,7 @@
 from fastapi import APIRouter
+from controllers.user import users
 
 
 router = APIRouter()
 
-@router.get("/users")
-async def users():
-    return "users"
+router.add_route("/users", users, methods=['GET'])
