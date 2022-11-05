@@ -1,6 +1,6 @@
 <template>
   <div>
-    <input @click="getHelloWorld" type="button" value="ユーザー情報取得" class="text-red-500">
+    <input @click="getUser" type="button" value="DBからユーザー情報取得">
     <div>{{ users }}</div>
   </div>
 </template>
@@ -13,7 +13,7 @@ export default {
     }
   },
   methods: {
-    getHelloWorld() {
+    getUser() {
       this.axios
         .get("/users")
         .then((res) => {
