@@ -17,7 +17,7 @@ export default {
       this.axios
         .get("/users")
         .then((res) => {
-          this.users = res.data[0]
+          this.users = res.data
         })
         .catch((e) => {
           console.log('e:', e);
