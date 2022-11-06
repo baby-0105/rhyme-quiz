@@ -9,7 +9,7 @@ $ docker network create fastapi_network
 $ docker-compose up -d
 ```
 
-.envの編集
+# .envの編集
 
 ```
 COMPOSE_PROJECT_NAME=rhyme_quiz
@@ -32,7 +32,7 @@ root@~~~~~:/usr/src/app/backend# alembic revision --autogenerate -m '' # マイ�
 root@~~~~~:/usr/src/app/backend# alembic upgrade head # マイグレーション
 ```
 
-## seeding
+# seeding
 サンプルデータ作成
 
 ```sh
@@ -41,7 +41,7 @@ root@~~~~~:/usr/src/app/scripts# cd /usr/src/app/backend
 root@~~~~~:/usr/src/app/backend# python seed.py
 ```
 
-## local host
+# local host
 
 ```
 http://localhost:8888/docs # Open API
