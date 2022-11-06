@@ -13,4 +13,4 @@ class UsersModel(Base):
         index=True,
         nullable=False,
     )
-    name = Column(String)
+    name = Column(String(40))

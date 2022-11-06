@@ -23,13 +23,22 @@ MYSQL_DATABASE=[各々で記載]
 PYTHONPATH=/usr/src/app/backend
 ```
 
+# マイグレーション
+
+```
+$ docker-compose exec back bash
+root@~~~~~:/usr/src/app/scripts# cd /usr/src/app/db
+root@~~~~~:/usr/src/app/backend# alembic revision --autogenerate -m '' # マイグレーションファイル作成
+root@~~~~~:/usr/src/app/backend# alembic upgrade head # マイグレーション
+```
+
 ## seeding
 サンプルデータ作成
 
 ```sh
 $ docker-compose exec back bash
-# cd /usr/src/app/backend
-# python seed.py
+root@~~~~~:/usr/src/app/scripts# cd /usr/src/app/backend
+root@~~~~~:/usr/src/app/backend# python seed.py
 ```
 
 ## local host
