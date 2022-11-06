@@ -18,7 +18,6 @@ engine = create_engine(
     echo=True
 )
 
-# DB session
 SessionLocal = scoped_session(
     sessionmaker(
         autocommit=False,

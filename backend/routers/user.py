@@ -1,7 +1,13 @@
 from fastapi import APIRouter
-from controllers.user import users
+from fastapi import Depends
+from sqlalchemy.orm import Session
+
+from database import get_db
+from controllers.user import UsersController
 
 
 router = APIRouter()
 
-router.add_route("/users", users, methods=['GET'])
+@router.get('/users')
+async def get_user(db: Session = Depends(get_db)):
+    return UsersController.get_name(db=db)

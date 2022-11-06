@@ -1,5 +1,7 @@
-from fastapi.responses import JSONResponse
+from models import UsersModel
 
 
-def users(self):
-    return JSONResponse(content={"data": "ok"})
+class UsersController:
+    @classmethod
+    def get_name(cls, db):
+        return db.query(UsersModel).filter(UsersModel.id == 1).first()
