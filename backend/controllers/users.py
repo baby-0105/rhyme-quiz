@@ -1,6 +1,6 @@
 from fastapi import HTTPException
 
-from models import UsersModel
+from domainmodels.daos.users import UsersModel
 
 
 class UsersController:

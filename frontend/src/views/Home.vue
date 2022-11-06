@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Hello World</h1>
     <input @click="getUser" type="button" value="DBからユーザー情報取得">
     <div>{{ users }}</div>
   </div>

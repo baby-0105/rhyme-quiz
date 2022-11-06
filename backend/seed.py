@@ -1,5 +1,5 @@
 from database import SessionLocal
-from models import UsersModel
+from domainmodels.daos.users import UsersModel
 
 db = SessionLocal()
 
