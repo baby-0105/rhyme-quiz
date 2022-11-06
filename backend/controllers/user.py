@@ -1,3 +1,5 @@
+from fastapi import HTTPException
+
 from models import UsersModel
 
 
@@ -8,4 +10,4 @@ class UsersController:
             user = db.query(UsersModel).filter(UsersModel.id == 1).first()
             return user
         except:
-            return {"error"}
+            raise HTTPException(status_code=500, detail="user not found")
