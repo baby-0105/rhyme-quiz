@@ -21,9 +21,11 @@ export default {
 </script>
 
 <template>
-  <h1>Hello World</h1>
-  <input @click="getUser" type="button" value="DBからユーザー情報取得">
-  <div>{{ users }}</div>
+  <div class="text-center">
+    <p class="text-rose-500 text-3xl">Hello World</p>
+    <button class="border p-1" @click="getUser" type="button">DBからユーザー情報取得</button>
+    <div>{{ users }}</div>
+  </div>
 </template>
 
 <style scoped>
