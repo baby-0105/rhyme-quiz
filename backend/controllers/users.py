@@ -8,6 +8,6 @@ class UsersController:
     def get_name(cls, db):
         try:
             user = db.query(UsersModel).filter(UsersModel.id == 1).first()
-            return user
+            return user.name
         except:
             raise HTTPException(status_code=500, detail="user not found")
