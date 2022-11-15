@@ -2,7 +2,7 @@
 
 ```
 $ cp .env.template .env
-$ docker network create fastapi_network
+$ docker network create rhyme_quiz
 
 .envの mysql用の定数を各々で設定
 
