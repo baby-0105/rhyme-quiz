@@ -6,6 +6,9 @@ RUN apt update \
     && apt clean
 
 WORKDIR /usr/src/app
-ADD requirements.txt .
-RUN pip install -U pip \
-    && pip install --trusted-host pypi.python.org -r requirements.txt
+ADD Pipfile .
+ADD Pipfile.lock .
+
+RUN pip install -U pip && \
+    pip install pipenv && \
+    pipenv install --system --ignore-pipfile --deploy
