@@ -1,6 +1,5 @@
-from fastapi.templating import Jinja2Templates
+from jinja import templates
 
-templates = Jinja2Templates(directory="templates")
 
 class PublicController():
     def top(request):
