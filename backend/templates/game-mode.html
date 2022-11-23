@@ -1,4 +1,30 @@
 {% extends "base.html" %}
 {%- block content %}
-<div>game-mode</div>
+<div class="app">
+  <div>game-mode</div>
+  <form method="POST" action="">
+    <div>
+      <div>文字数：</div>
+      <select>
+        <option value="random">ランダム</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+      </select>
+    </div>
+    <div>
+      <div>時間：</div>
+      <select>
+        <option value="random">時間制限なし</option>
+        <option value="1">1分</option>
+        <option value="3">3分</option>
+        <option value="3">5分</option>
+      </select>
+    </div>
+    <button type="submit">始める</button>
+  </form>
+</div>
 {% endblock %}
